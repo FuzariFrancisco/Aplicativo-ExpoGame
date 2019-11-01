@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class InicioControlador : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject painelInicio, painelRA, painelPremio, painelOpcao;
     void Start()
     {
         
@@ -26,19 +26,66 @@ public class InicioControlador : MonoBehaviour
     {
         SceneManager.LoadScene("Inicio");
     }
-
-    public void IniciarRA()
+    public void AbrirPainelRA()
     {
-        SceneManager.LoadScene("GameBoyColor");
+        painelInicio.SetActive(false);
+        painelRA.SetActive(true);
+    }
+
+    public void FecharPainelRA()
+    {
+        painelRA.SetActive(false);
+        painelInicio.SetActive(true);
+
     }
 
     public void IniciarRecebaPremio()
     {
-        SceneManager.LoadScene("RecebePremio");
+        painelInicio.SetActive(false);
+        painelPremio.SetActive(true);
+    }
+
+     public void FecharRecebaPremio()
+    {
+        painelPremio.SetActive(false);
+        painelInicio.SetActive(true);
     }
 
     public void IniciarHome()
     {
         SceneManager.LoadScene("Inicio");
+    }
+
+    public void AbrirPainelOpcao()
+    {
+        painelOpcao.SetActive(true);
+    }
+    public void FecharPainelOpcao()
+    {
+        painelOpcao.SetActive(false);
+    }
+    public void FecharAPP()
+    {
+        Application.Quit();
+    }
+
+    public void Atari()
+    {
+        SceneManager.LoadScene("Atari");
+    }
+
+    public void GameBoy()
+    {
+        SceneManager.LoadScene("GameBoyColor");
+    }
+
+    public void MegaDriver()
+    {
+        SceneManager.LoadScene("MegaDriver");
+    }
+
+    public void Nintendo()
+    {
+        SceneManager.LoadScene("Nintendo");
     }
 }

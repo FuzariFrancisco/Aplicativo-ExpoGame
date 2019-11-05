@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameControlador : MonoBehaviour
@@ -10,11 +11,13 @@ public class GameControlador : MonoBehaviour
     private int pontos, contadorPergunta;
     public Text descricaoPontosTxt, pontosTxt;
     public AudioClip somCorreto, somErrado;
-
+    public GameObject temporizador;
 
     // Start is called before the first frame update
     void Start()
     {
+        temporizador.SetActive(true);
+
         contadorPergunta = 1;
         Time.timeScale = 1;
     }
@@ -25,8 +28,8 @@ public class GameControlador : MonoBehaviour
         //TROCA DE FASE CASO O TEMPO ACABE
         if (scriptTempo.segundos < 0)
         {
+            scriptTempo.segundos = 20f;
             TrocaPerguntas();
-            scriptTempo.segundos = 30;
         }    
     }
 
@@ -34,7 +37,8 @@ public class GameControlador : MonoBehaviour
     public void RespostaCorreta()
     {
         AudioSource.PlayClipAtPoint(somCorreto, Camera.main.transform.position * Time.deltaTime);
-        pontos += 1;
+        scriptTempo.segundos = 20f;
+        pontos += 1;     
         TrocaPerguntas();
     }
 
@@ -42,9 +46,14 @@ public class GameControlador : MonoBehaviour
     public void RespostaErrada()
     {
         AudioSource.PlayClipAtPoint(somErrado, Camera.main.transform.position * Time.deltaTime);
+        scriptTempo.segundos = 20f;
         TrocaPerguntas();
     }
 
+    public void CenaInicio()
+    {
+        SceneManager.LoadScene("Inicio");
+    }
     //FINALIZA O JOGO QUANDO AS PERGUNTAS ACABAREM
     public void FimDeFase()
     {
@@ -219,6 +228,7 @@ public class GameControlador : MonoBehaviour
                 perguntas[9].SetActive(false);
 
                 perguntas[10].SetActive(true);
+                temporizador.SetActive(false);
                 FimDeFase();
                 Time.timeScale = 0;
 

@@ -5,9 +5,6 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Cenas/PreInicio.unity
-    guid: cd10e22f4597af24a8f7f4649fe3c25a
   - enabled: 1
     path: Assets/Cenas/Login.unity
     guid: 661c00d1377661f40aa941f4c0661a45

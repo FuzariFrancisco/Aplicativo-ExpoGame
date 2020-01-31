@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class InicioControlador : MonoBehaviour
 {
-    public GameObject painelInicio, painelRA, painelPremio, painelOpcao;
+    public GameObject painelInicio, painelRA, painelOpcao;
     void Start()
     {
         
@@ -37,18 +37,6 @@ public class InicioControlador : MonoBehaviour
         painelRA.SetActive(false);
         painelInicio.SetActive(true);
 
-    }
-
-    public void IniciarRecebaPremio()
-    {
-        painelInicio.SetActive(false);
-        painelPremio.SetActive(true);
-    }
-
-     public void FecharRecebaPremio()
-    {
-        painelPremio.SetActive(false);
-        painelInicio.SetActive(true);
     }
 
     public void IniciarHome()

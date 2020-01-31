@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Cenas/Login.unity
-    guid: 661c00d1377661f40aa941f4c0661a45
-  - enabled: 1
     path: Assets/Cenas/Inicio.unity
     guid: bf5a886c9318c7f44aa6bb3846326efe
   - enabled: 1
@@ -29,4 +26,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Cenas/CenasRA/SaibaMais.unity
     guid: 03f0f998123146540883369df89fc1ec
+  - enabled: 1
+    path: Assets/Cenas/Kratos.unity
+    guid: 55692205e7336d0498d08b96997374b5
+  - enabled: 1
+    path: Assets/Cenas/Mario.unity
+    guid: 11278f097cd01cb468c07f69a9093d40
+  - enabled: 1
+    path: Assets/Cenas/Pikachu.unity
+    guid: 38e4f306bfc399c48a7370801c43c4dc
+  - enabled: 1
+    path: Assets/Cenas/Chunli.unity
+    guid: 2f53b73ab95474644947d64c0bd1a90d
   m_configObjects: {}
